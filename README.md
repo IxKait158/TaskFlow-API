@@ -1,34 +1,21 @@
 # TaskFlow API
 
-TaskFlow – це backend Web API для управління завданнями всередині проектів.
-Проект реалізований як навчальний pet-project із фокусом на чисту архітектуру, REST API та роботу з базою даних.
+TaskFlow is a backend Web API designed for comprehensive task and project management. This application was developed as a hands-on pet project with a strong focus on implementing Clean Architecture, adhering to RESTful API design principles, and ensuring robust database interactions.
 
-## Можливості
+## Architecture
 
-- Реєстрація та автентифікація користувачів (JWT)
-- Створення та управління проектами
-- Робота із завданнями всередині проектів
-- призначення виконавців завдань
-- Зміна статусів завдань
-- Контроль доступу та прав користувачів
+The solution is structured using a Layered (Clean-ish) Architecture approach. It is divided into distinct class libraries to strictly enforce the separation of concerns:
 
-## Архітектура
+* **WebAPITest.Api:** HTTP layer (Controllers, Middleware, Routing)
+* **WebAPITest.Application:** Core business logic, Application Services, and DTOs
+* **WebAPITest.Domain:** Core domain entities, Interfaces, and Enums
+* **WebAPITest.Infrastructure:** Data access (EF Core), Database context, Repositories, and JWT configuration
 
-Проект побудований з використанням layered (clean-ish) архітектури та поділений на декілька проектів:
+## Tech Stack
 
-```text
-WebAPITest.Api            — HTTP шар (Controllers, Middleware)
-WebAPITest.Application    — бізнес-логіка, сервіси, DTO
-WebAPITest.Domain         — доменні сутності та enum'и
-WebAPITest.Infrastructure — EF Core, БД, JWT, репозиторії
-```
-
-## Стек технологій
-```text
-C#
-ASP.NET Core Web API
-Entity Framework Core
-SQL Server
-JWT Authentication
-Swagger (OpenAPI)
-```
+* **Language:** C#
+* **Framework:** ASP.NET Core Web API
+* **ORM:** Entity Framework Core
+* **Database:** MS SQL Server
+* **Security:** JWT Authentication
+* **Documentation:** Swagger (OpenAPI)
